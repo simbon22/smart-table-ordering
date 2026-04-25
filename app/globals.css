@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
-@theme {
-  --background: #fefefe;
-  --foreground: #18181b;
+@layer base {
+  :root {
+    --background: #fefefe;
+    --foreground: #18181b;
+  }
 }
 
 @layer base {

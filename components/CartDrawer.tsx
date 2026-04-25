@@ -66,7 +66,7 @@ export function CartDrawer({
           ) : (
             items.map(({ product, quantity }) => (
               <div key={product.id} className="flex gap-4 pb-5 border-b border-gray-50 group transition-all hover:bg-gray-50/50 rounded-xl p-2 -mx-2">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-rose-100 to-rose-200 flex-shrink-0 shadow-inner" />
+                <div className="w-14 h-14 rounded-xl bg-linear-to-br from-rose-100 to-rose-200 shrink-0 shadow-inner" />
                 <div className="flex-1">
                   <div className="flex justify-between">
                     <p className="font-medium text-gray-700">{product.name}</p>
@@ -109,7 +109,7 @@ export function CartDrawer({
             </div>
             <button
               onClick={handleCheckout}
-              className="relative w-full py-3.5 rounded-full bg-gradient-to-r from-rose-500 to-rose-600 text-white font-medium shadow-md hover:shadow-xl transition-all duration-300 active:scale-95 flex items-center justify-center gap-2 group overflow-hidden"
+              className="relative w-full py-3.5 rounded-full bg-linear-to-r from-rose-500 to-rose-600 text-white font-medium shadow-md hover:shadow-xl transition-all duration-300 active:scale-95 flex items-center justify-center gap-2 group overflow-hidden"
             >
               <CreditCard size={18} />
               Procedi al pagamento
