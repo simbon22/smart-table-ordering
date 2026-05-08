@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import Image from 'next/image';
 import { toast } from 'sonner';
 import { Product } from '@/data/menu';
 
@@ -25,7 +26,6 @@ export function MenuItem({ product, onAddToCart }: MenuItemProps) {
     setQuantity(1);
   };
 
-  // Costruisci il percorso immagine
   const imagePath = `/${product.image}.jpg`;
 
   return (
@@ -37,13 +37,17 @@ export function MenuItem({ product, onAddToCart }: MenuItemProps) {
       <div className={`absolute inset-0 bg-gradient-to-r from-rose-200 via-rose-100 to-amber-100 opacity-0 transition-opacity duration-700 ${isHovered ? 'opacity-100' : ''}`} style={{ zIndex: -1 }} />
       
       <div className="relative flex items-start gap-3 sm:gap-5 p-3 sm:p-5 bg-white/90 backdrop-blur-sm rounded-2xl transition-all duration-300">
-        {/* Immagine */}
+        {/* Immagine con badge elegante */}
         <div className="relative overflow-hidden rounded-xl w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 bg-gradient-to-br from-rose-100 to-rose-200">
           {!imgError ? (
-            <img
+            <Image
               src={imagePath}
               alt={product.name}
+              width={80}
+              height={80}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+              quality={60}
               onError={() => setImgError(true)}
             />
           ) : (
@@ -52,8 +56,9 @@ export function MenuItem({ product, onAddToCart }: MenuItemProps) {
             </div>
           )}
           {product.popular && (
-            <div className="absolute top-0 left-0 z-10 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-br-xl shadow-md flex items-center gap-1">
-              🔥 Popolare
+            <div className="absolute top-2 left-2 z-10 bg-white/90 backdrop-blur-sm text-rose-600 text-[9px] sm:text-[10px] font-medium px-1.5 sm:px-2 py-0.5 rounded-full shadow-sm border border-rose-200 flex items-center gap-1">
+              <span className="w-1 h-1 bg-rose-500 rounded-full" />
+              Più ordinato
             </div>
           )}
         </div>

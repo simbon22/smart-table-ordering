@@ -29,7 +29,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 glass-nav">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
           <div className="flex items-baseline gap-2 sm:gap-3">
-            <span className="text-xl sm:text-2xl font-bold tracking-tight bg-linear-to-r from-gray-800 to-gray-500 bg-clip-text text-transparent">Smart<span className="text-rose-500 bg-none">Table</span></span>
+            <span className="text-xl sm:text-2xl font-bold tracking-tight bg-gradient-to-r from-gray-800 to-gray-500 bg-clip-text text-transparent">Smart<span className="text-rose-500 bg-none">Table</span></span>
             <span className="text-[10px] sm:text-[11px] font-mono text-rose-400 bg-rose-50/80 px-1.5 sm:px-2 py-0.5 rounded-full backdrop-blur-sm">Pizzalandia</span>
           </div>
           <button onClick={() => setIsCartOpen(true)} className="relative p-1.5 sm:p-2 rounded-full hover:bg-gray-100/80 transition-all duration-300 group">
@@ -44,29 +44,13 @@ export default function Home() {
       </nav>
 
       <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        {/* Hero section con QR animato */}
+        {/* Hero section senza QR */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24 relative">
-          {/* QR Code decorativo fluttuante */}
-          <div className="absolute -top-8 -right-8 w-20 h-20 opacity-30 animate-pulse pointer-events-none hidden sm:block">
-            <svg viewBox="0 0 100 100" fill="none">
-              <rect x="20" y="20" width="60" height="60" stroke="#f43f5e" strokeWidth="2" fill="none" />
-              <rect x="30" y="30" width="10" height="10" fill="#f43f5e" />
-              <rect x="50" y="30" width="10" height="10" fill="#f43f5e" />
-              <rect x="70" y="30" width="10" height="10" fill="#f43f5e" />
-              <rect x="30" y="50" width="10" height="10" fill="#f43f5e" />
-              <rect x="50" y="50" width="10" height="10" fill="#f43f5e" />
-              <rect x="70" y="50" width="10" height="10" fill="#f43f5e" />
-              <rect x="30" y="70" width="10" height="10" fill="#f43f5e" />
-              <rect x="50" y="70" width="10" height="10" fill="#f43f5e" />
-              <rect x="70" y="70" width="10" height="10" fill="#f43f5e" />
-            </svg>
-          </div>
-          
           <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/60 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 text-xs sm:text-sm text-gray-600 shadow-sm border border-white/40 mb-5 sm:mb-6 animate-float">
             <Smartphone size={12} className="text-rose-500" />
             Scansiona il QR sul tavolo
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight bg-linear-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent leading-tight">
             Ordina senza<br className="hidden sm:block" /> alzarti
           </h1>
           <p className="text-gray-500 mt-4 sm:mt-6 text-base sm:text-lg max-w-md mx-auto px-4">
@@ -87,7 +71,7 @@ export default function Home() {
             { icon: CreditCard, title: 'Paga in un tap', desc: 'Apple/Google Pay', color: 'from-emerald-50 to-emerald-100', iconColor: 'text-emerald-500' }
           ].map((step, idx) => (
             <div key={idx} className="group relative bg-white/50 backdrop-blur-sm rounded-2xl p-5 sm:p-6 text-center shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-white/40">
-              <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-linear-to-br ${step.color} ${step.iconColor} flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${step.color} ${step.iconColor} flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
                 <step.icon size={24} strokeWidth={1.5} />
               </div>
               <h3 className="font-semibold text-gray-800 text-base sm:text-lg">{step.title}</h3>
@@ -97,7 +81,7 @@ export default function Home() {
         </div>
 
         {/* Menu */}
-        {['Pizze', 'Antipasti', 'Bevande', 'Dolci'].map((category, catIdx) => (
+        {['Antipasti', 'Pizze', 'Bevande', 'Dolci'].map((category, catIdx) => (
           <div key={category} className="mb-12 sm:mb-16">
             <div className="flex items-baseline justify-between border-b border-gray-200/60 pb-2 sm:pb-3 mb-5 sm:mb-7">
               <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-800">{category}</h2>
@@ -128,7 +112,7 @@ export default function Home() {
 
       <footer className="relative z-10 py-6 sm:py-8 text-center border-t border-gray-100/80 mt-12 sm:mt-20 bg-white/30 backdrop-blur-sm">
         <p className="text-[10px] sm:text-xs text-gray-400 tracking-wide px-4">
-          Smart Table Ordering — Pizzalandia • Rione Alto, Napoli
+          Smart Table Ordering — Pizzalandia 
         </p>
       </footer>
     </>
