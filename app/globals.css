@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
 
 @layer base {
   :root {
@@ -16,7 +15,7 @@
   body {
     background: var(--bg-0);
     color: var(--ink);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans), sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -24,10 +23,10 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Archivo Black', sans-serif;
+    font-family: var(--font-display), sans-serif;
   }
   .font-mono-tag {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono-tag), monospace;
   }
 
   .animate-in-stagger {
